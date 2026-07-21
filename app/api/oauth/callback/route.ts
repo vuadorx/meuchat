@@ -20,8 +20,7 @@ export async function GET(request: NextRequest) {
         }
 
     try {
-          const appId = process.env.INSTAGRAM_APP_ID;
-          const appSecret = process.env.INSTAGRAM_APP_SECRET;
+const appId = process.env.INSTAGRAM_APP_ID as string;          const appSecret = process.env.INSTAGRAM_APP_SEChRET as string;
           const redirectUri = new URL(request.url).origin + '/api/oauth/callback';
 
           const tokenResponse = await fetch('https://graph.instagram.com/v18.0/oauth/access_token', {
