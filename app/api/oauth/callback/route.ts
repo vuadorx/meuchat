@@ -37,6 +37,8 @@ const appId = process.env.INSTAGRAM_APP_ID as string;          const appSecret =
 
           const data = await tokenResponse.json();
 
+
+        console.log('Instagram API Response:', JSON.stringify(data, null, 2));
           if (data.error) {
                   console.error('Erro na Troca de Token:', data.error);
                   return NextResponse.redirect(
